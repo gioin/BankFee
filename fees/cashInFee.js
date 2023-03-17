@@ -1,6 +1,6 @@
-import feeConfig from '../config/feeConfig.js';
+const feeConfig = require('../config/feeConfig');
 
-function calculateCashInFee(data) {
+function cashInFee(data) {
   const feePercents = feeConfig.cashIn.percents / 100;
   const maxFee = feeConfig.cashIn.max.amount;
 
@@ -11,4 +11,4 @@ function calculateCashInFee(data) {
   })));
 }
 
-export default calculateCashInFee;
+module.exports = cashInFee;

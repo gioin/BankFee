@@ -1,10 +1,16 @@
-import moment from 'moment';
-import feeConfig from '../config/feeConfig.js';
+const moment = require('moment');
+const feeConfig = require('../config/feeConfig.js');
+
+moment.updateLocale('en', {
+  week: {
+    dow: 1,
+    doy: 6,
+  },
+});
 
 function cashOutNaturalFee(data) {
   const result = [];
   const { week_limit: weekLimit, percents } = feeConfig.cashOut.natural;
-
   const keys = Object.keys(data);
   const numKeys = keys.length;
 
@@ -13,6 +19,7 @@ function cashOutNaturalFee(data) {
     const numOperations = operations.length;
 
     operations.forEach((operation, index) => {
+      let fee;
       const currentOperation = operation;
       const isFirstOperation = index === 0;
       const nextOperation = operations[index + 1];
@@ -23,6 +30,7 @@ function cashOutNaturalFee(data) {
         nextOperation?.date,
         'week',
       );
+
       if (!isLastOperation) {
         if (isSameWeekAsNext) {
           if (isAmountGreaterThanLimit) {
@@ -40,8 +48,6 @@ function cashOutNaturalFee(data) {
           nextOperation.weekLimit -= nextOperation.amount;
         }
       }
-
-      let fee;
 
       if (operation.weekLimit > 0) {
         fee = 0;
@@ -62,4 +68,4 @@ function cashOutNaturalFee(data) {
   return result;
 }
 
-export default cashOutNaturalFee;
+module.exports = cashOutNaturalFee;

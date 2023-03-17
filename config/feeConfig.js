@@ -24,4 +24,4 @@ const feeConfig = {
   },
 };
 
-export default feeConfig;
+module.exports = feeConfig;

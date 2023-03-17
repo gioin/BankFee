@@ -1,4 +1,4 @@
-import feeConfig from '../config/feeConfig.js';
+const feeConfig = require('../config/feeConfig.js');
 
 function cashOutJuridicalFee(data) {
   const minFee = feeConfig.cashOut.juridical.min.amount;
@@ -11,4 +11,4 @@ function cashOutJuridicalFee(data) {
   })));
 }
 
-export default cashOutJuridicalFee;
+module.exports = cashOutJuridicalFee;
