@@ -5,8 +5,7 @@ This is a simple Node.js command line application that calculates fees for bank 
 
 ## Installation
 
-> To get started, clone the repository from GitHub and navigate to the project directory.
-
+To get started, clone the repository from GitHub and navigate to the project directory.
 
 ```bash
 git clone https://github.com/gioin/BankFee.git
