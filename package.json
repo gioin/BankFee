@@ -1,0 +1,31 @@
+{
+  "name": "bankfee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gioin/BankFee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/gioin/BankFee/issues"
+  },
+  "homepage": "https://github.com/gioin/BankFee#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
